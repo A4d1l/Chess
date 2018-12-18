@@ -11,4 +11,13 @@ public class King extends Piece {
     public King(PieceType pieceType, PieceState pieceState, Color color) {
         super(pieceType, pieceState, color);
     }
+
+    public boolean isValidMove(Cell startCell, Cell endCell){
+        int xPosDiff = Math.abs(startCell.getXPosition() - endCell.getXPosition());
+        int yPosDiff = Math.abs(startCell.getYPosition() - endCell.getYPosition());
+
+        if(xPosDiff <= 1 && yPosDiff <= 1)
+            return true;
+        return false;
+    }
 }

@@ -15,11 +15,12 @@ public class Rook extends Piece {
         super(pieceType, pieceState, color);
     }
 
-    protected boolean validateMove(){
-        return true;
+    public boolean isValidMove(Cell startCell, Cell endCell){
+        if(startCell.getXPosition() == endCell.getXPosition())
+            return true;
+        if(startCell.getYPosition() == startCell.getYPosition())
+            return true;
+        return false;
     }
 
-    protected List<Cell> possibleMoves(){
-        return null;
-    }
 }

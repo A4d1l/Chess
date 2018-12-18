@@ -17,18 +17,11 @@ import java.util.List;
 
 @AllArgsConstructor
 @Getter
-public class Piece {
+public abstract class Piece {
     protected PieceType pieceType;
     @Setter
     protected PieceState pieceState;
     protected Color color;
 
-    protected boolean validateMove(){
-        return true;
-    }
-    protected List<Cell> possibleMoves(){
-        return null;
-    }
-
-
+    public abstract boolean isValidMove(Cell startCell, Cell endCell);
 }
